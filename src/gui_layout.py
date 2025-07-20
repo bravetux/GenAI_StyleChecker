@@ -7,10 +7,15 @@ def setup_gui(master, app):
     Args:
         master: The root window or parent widget for the application.
         app: The instance of the StyleCheckerApp to bind components to.
+
+    This function initializes the main window, creates frames for organizing widgets,
+    and adds buttons, dropdowns, and text boxes for user interaction.
     """
     print("Setting up GUI layout...")  # Debug: Log GUI setup start
+
+    # Set the main window title and size
     master.title("C# Style Checker")
-    master.geometry("762x600")  # Main window size
+    master.geometry("752x600")  # Main window size
 
     consolas_font = ("Consolas", 14)
 
@@ -33,7 +38,6 @@ def setup_gui(master, app):
     Button(button_frame, text="Scan Files", command=app.scan_files, font=consolas_font).pack(side='left', padx=10)
     Button(button_frame, text="Check Style", command=app.check_style, font=consolas_font).pack(side='left', padx=10)
     Button(button_frame, text="Update Ollama Model", command=app.update_model_list, font=consolas_font).pack(side='left', padx=10)
-    # Exit button relocated to bottom frame
 
     # LLM model dropdown with label
     model_frame = Frame(master)
@@ -56,8 +60,8 @@ def setup_gui(master, app):
     # LLM status on the same line
     status_frame = Frame(master)
     status_frame.pack(fill='x')
-    Button(status_frame, text="Check LLM Status", command=app.check_llm_status, font=consolas_font).pack(side='left', padx=10)
-    app.llm_status_label = Label(status_frame, text="LLM Status: Unknown", font=consolas_font)
+    Button(status_frame, text="Check Ollama Status", command=app.check_llm_status, font=consolas_font).pack(side='left', padx=10)
+    app.llm_status_label = Label(status_frame, text="Ollama Server: Unknown", font=consolas_font)
     app.llm_status_label.pack(side='left', padx=20)
 
     # Output Text Box with Scrollbar
@@ -86,8 +90,19 @@ def setup_gui(master, app):
     RESIZE_DEBUG = False
 
     def on_resize(event):
+        """
+        Logs the new window size to the output text box when the window is resized.
+
+        Args:
+            event: The resize event containing the new width and height of the window.
+        """
         if RESIZE_DEBUG:
+            # The event contains the new width and height of the window
             new_size = f"Width: {event.width}, Height: {event.height}"
+            
+            # Insert the new window size into the output text box
+            # after the current contents of the text box, so it appears
+            # as a new line of text at the end of the text box.
             app.text_box.insert(END, f"\nWindow resized: {new_size}\n")
 
     master.bind("<Configure>", on_resize)
