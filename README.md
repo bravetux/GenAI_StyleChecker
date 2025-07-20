@@ -1,4 +1,4 @@
-# Language Style Checker
+# GENAI Language Style Checker
 
 This project is a Language style checker that verifies language files against the Google Lanuage Style Guide. It provides a graphical user interface (GUI) for ease of use and integrates with the Ollama Llama3 API for enhanced functionality.
 
