@@ -1,0 +1,43 @@
+Google C# Style Guide
+
+1. **Naming Conventions**
+   - Use PascalCase for class names and method names.
+   - Use camelCase for local variables and method parameters.
+   - Use ALL_CAPS for constants.
+
+2. **File Organization**
+   - Each class should be in its own file.
+   - The file name should match the class name.
+
+3. **Indentation and Spacing**
+   - Use four spaces for indentation.
+   - Do not use tabs.
+   - Place a space after commas and around operators.
+
+4. **Braces**
+   - Use braces for all control statements, even if they are optional.
+   - Place the opening brace on the same line as the statement.
+
+5. **Comments**
+   - Use XML documentation comments for public members.
+   - Write comments that explain the "why" behind complex logic.
+
+6. **Using Directives**
+   - Place `using` directives at the top of the file.
+   - Sort `using` directives alphabetically.
+
+7. **Error Handling**
+   - Use exceptions for error handling.
+   - Avoid catching general exceptions; catch specific exceptions instead.
+
+8. **Properties**
+   - Use properties instead of public fields.
+   - Use auto-implemented properties when no additional logic is needed.
+
+9. **Async Programming**
+   - Use async and await for asynchronous programming.
+   - Name asynchronous methods with the suffix "Async".
+
+10. **Unit Testing**
+    - Write unit tests for all public methods.
+    - Use a testing framework like NUnit or xUnit.

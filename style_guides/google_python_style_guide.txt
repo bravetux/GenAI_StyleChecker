@@ -1,0 +1,24 @@
+# Google Python Style Guide
+
+This document provides guidelines for writing Python code that is consistent with Google's style. It includes rules for formatting, naming, and other conventions to ensure readability and maintainability.
+
+## Formatting
+- Use 4 spaces for indentation, no tabs.
+- Limit lines to 80 characters.
+- Use blank lines to separate functions and classes.
+
+## Naming Conventions
+- Use `snake_case` for variable, function, and method names.
+- Use `PascalCase` for class names.
+- Use `UPPER_CASE` for constants.
+
+## Comments
+- Use `#` for single-line comments.
+- Use docstrings for module, class, and method documentation.
+
+## Other Guidelines
+- Use type hints where applicable.
+- Follow PEP 8 for additional style rules.
+- Avoid using wildcard imports (e.g., `from module import *`).
+
+For more details, refer to the official Google Python Style Guide.
